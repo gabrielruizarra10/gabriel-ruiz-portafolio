@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  /* Offset anchored sections below the fixed navbar */
+  scroll-padding-top: 88px;
+}
+
+body {
+  background-color: #050505;
+  color: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #1d56e8;
+  color: #ffffff;
+}
+
+/* Accessible focus states */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #1d56e8;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Respect reduced-motion at the CSS level too */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Engineering grid backdrop (hero) */
+.engineering-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, black 30%, transparent 75%);
+}
+
+/* Blueprint grid for light sections */
+.blueprint-grid {
+  background-image:
+    linear-gradient(rgba(5, 5, 5, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(5, 5, 5, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Subtle scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1d56e8;
+}
